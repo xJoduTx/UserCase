@@ -23,6 +23,7 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
     //Security
     implementation("org.springframework.boot:spring-boot-starter-security")
@@ -37,13 +38,12 @@ dependencies {
     //kafka
     implementation("org.springframework.kafka:spring-kafka")
 
-    //RabbitMQ
-    implementation("org.springframework.amqp:spring-rabbit:4.0.0-M2")
-    implementation("com.rabbitmq:amqp-client:5.25.0")
-
     implementation("io.jsonwebtoken:jjwt-api:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
+
+    //чето ульмас хочет
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.3.0")
 
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("org.postgresql:postgresql")
@@ -52,6 +52,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-tasks.withType<Test> {
+
+    tasks.withType<Test> {
     useJUnitPlatform()
 }
